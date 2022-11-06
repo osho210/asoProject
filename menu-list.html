@@ -53,11 +53,14 @@
         ["サーモン", "shiyo.png", "8.5"],
       ];
 
-      let count = 0;
+      let totalCount = 0;
 
       // 表示領域の確保
       const mainContent = document.getElementById("mainContent");
       for (let i = 0; i < menuArray.length; i++) {
+        // 1食ごとの数量変更
+        let count = 0;
+
         const menuWrapper = document.createElement("div");
         menuWrapper.setAttribute("class", "menuWrapper");
 
@@ -94,21 +97,41 @@
 
         // buttonの発火処理;
         const clickDelete = deleteButtun.addEventListener("click", () => {
-          count--;
-          menuCount.textContent = count + "食";
+          deleteButtun.disabled = false;
+
+          if (totalCount <= 0) {
+            // 追加ボタンのクリックを不可にする
+            deleteButtun.disabled = true;
+          } else if (totalCount > 0 || totalCount < 7) {
+            count--;
+            totalCount--;
+            menuCount.textContent = count + "食";
+          }
+          console.log(totalCount);
         });
 
         const clickAdd = addButtun.addEventListener("click", () => {
-          count++;
-          menuCount.textContent = count + "食";
+          if (totalCount > 6) {
+            // 追加ボタンのクリックを不可にする
+            addButtun.disabled = true;
+            deleteButtun.disabled = false;
+          } else if (totalCount < 0) {
+            // 追加ボタンのクリックを不可にする
+            deleteButtun.disabled = true;
+          } else {
+            addButtun.disabled = false;
+            deleteButtun.disabled = false;
+            count++;
+            totalCount++;
+            menuCount.textContent = count + "食";
+          }
+          console.log(totalCount);
         });
 
         //   食数のカウント表示
         const menuCountArea = document.createElement("div");
         menuCountArea.setAttribute("class", "menuCountArea");
         const menuCount = document.createElement("p");
-        //   この数値のカウントは取得内にあるクラスのカウントによる取得
-        console.log(count + "test");
         menuCount.textContent = count + "食";
         menuCountArea.appendChild(menuCount);
 
@@ -118,7 +141,13 @@
         mainContent.appendChild(menuWrapper);
       }
 
-      // for文で値を逐次格納していく
+      // 選択数チェックの関数
+      const choiseCount = () => {
+        if (totalCount == 7) {
+          // 追加ボタンのクリックを不可にする
+          addButtun.setAttribute("class", "disable");
+        }
+      };
     </script>
 
     <!-- js要素作成後にcssをかけるため記述 -->
