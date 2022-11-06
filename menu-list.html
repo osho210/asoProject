@@ -92,25 +92,24 @@
         buttonArea.style.display = "flex";
         buttonArea.style.justifyContent = "space-between";
 
-        // buttonの発火処理
-        // const clickDelete = document
-        //   .getElementsByClassName("deleteButtun")
-        //   [i].addEventListener("click", () => {
-        //     count--;
-        //   });
+        // buttonの発火処理;
+        const clickDelete = deleteButtun.addEventListener("click", () => {
+          count--;
+          menuCount.textContent = count + "食";
+        });
 
-        // const clickAdd = document
-        //   .getElementsByClassName("addButtun")
-        //   [i].addEventListener("click", () => {
-        //     count++;
-        //   });
+        const clickAdd = addButtun.addEventListener("click", () => {
+          count++;
+          menuCount.textContent = count + "食";
+        });
 
         //   食数のカウント表示
         const menuCountArea = document.createElement("div");
         menuCountArea.setAttribute("class", "menuCountArea");
         const menuCount = document.createElement("p");
         //   この数値のカウントは取得内にあるクラスのカウントによる取得
-        menuCount.innerHTML = count + "食";
+        console.log(count + "test");
+        menuCount.textContent = count + "食";
         menuCountArea.appendChild(menuCount);
 
         //   部品接続
