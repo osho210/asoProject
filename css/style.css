@@ -1,3 +1,7 @@
+button {
+  cursor: pointer;
+}
+
 p {
   font-size: 20px;
 }
@@ -8,6 +12,31 @@ body {
 
 .nav-list {
   padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+.menuRecomend {
+  margin: 0 auto;
+  text-align: center;
+  text-align: center;
+  border: 1px solid;
+  padding: 2%;
+  border-radius: 10px;
+  margin: 5%;
+}
+
+.menuFillter {
+  border-bottom: 1px solid #000;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.menuFillter ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+.foodFillter {
   display: flex;
   justify-content: space-between;
 }
@@ -74,4 +103,28 @@ body {
   width: 40%;
   padding: 5px;
   border-radius: 5px;
+}
+
+/* 7食選択の領域 */
+.choisedMenu {
+  background: gainsboro;
+  padding: 5% 0;
+  text-align: center;
+  width: 110%;
+  margin: 0 auto;
+  position: relative;
+  right: 5%;
+  overflow: hidden;
+}
+
+.choisedMenuFinish {
+  background: #588f0e;
+  padding: 5% 0;
+  text-align: center;
+  width: 110%;
+  margin: 0 auto;
+  position: relative;
+  right: 5%;
+  overflow: hidden;
+  color: white;
 }

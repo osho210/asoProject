@@ -14,17 +14,13 @@
     <title>食べ食べプラン</title>
   </head>
 
-  <body>
+  <body id="body">
     <!-- G1-3-1に対応している画面です -->
     <div>
-      <!-- header部分 -->
-      <div>
-        <p>メニューを6食選択</p>
-      </div>
       <!-- メニュー絞り込み部分 -->
       <div>
-        <div><p>メニューからおまかせ選択</p></div>
-        <div>
+        <div class="menuRecomend"><p>メニューからおまかせ選択</p></div>
+        <div class="menuFillter">
           <ul>
             <li>牛肉</li>
             <li>豚肉</li>
@@ -37,7 +33,7 @@
       <!-- mainコンテンツ部分 -->
       <div>
         <!-- 食材フィルター -->
-        <div>
+        <div class="foodFillter">
           <div><button>食材フィルター</button></div>
           <div><button>並び変え</button></div>
         </div>
@@ -95,37 +91,36 @@
         buttonArea.style.display = "flex";
         buttonArea.style.justifyContent = "space-between";
 
-        // buttonの発火処理;
+        // 削除ボタンが押された場合の処理;
         const clickDelete = deleteButtun.addEventListener("click", () => {
           deleteButtun.disabled = false;
 
           if (totalCount <= 0) {
             // 追加ボタンのクリックを不可にする
             deleteButtun.disabled = true;
-          } else if (totalCount > 0 || totalCount < 7) {
+            addButtun.disabled = false;
+          } else if (totalCount > 0 && totalCount <= 7 && count > 0) {
             count--;
             totalCount--;
             menuCount.textContent = count + "食";
           }
-          console.log(totalCount);
+
+          choisedMenuCheck(totalCount);
         });
 
+        // 追加ボタンが押された場合の処理
         const clickAdd = addButtun.addEventListener("click", () => {
+          addButtun.disabled = false;
           if (totalCount > 6) {
             // 追加ボタンのクリックを不可にする
             addButtun.disabled = true;
             deleteButtun.disabled = false;
-          } else if (totalCount < 0) {
-            // 追加ボタンのクリックを不可にする
-            deleteButtun.disabled = true;
-          } else {
-            addButtun.disabled = false;
-            deleteButtun.disabled = false;
+          } else if (totalCount >= 0 && totalCount <= 6 && count >= 0) {
             count++;
             totalCount++;
             menuCount.textContent = count + "食";
           }
-          console.log(totalCount);
+          choisedMenuCheck(totalCount);
         });
 
         //   食数のカウント表示
@@ -141,16 +136,38 @@
         mainContent.appendChild(menuWrapper);
       }
 
-      // 選択数チェックの関数
-      const choiseCount = () => {
-        if (totalCount == 7) {
-          // 追加ボタンのクリックを不可にする
-          addButtun.setAttribute("class", "disable");
+      // 選択済みの食数を選択する領域
+      const choisedMenu = document.createElement("div");
+      const choisedMenuText = document.createElement("p");
+      choisedMenuText.innerHTML = "あと7食必要です";
+
+      const choisedMenuCheck = (totalCount) => {
+        // 残り1~6の場合
+        if (7 - totalCount > 0) {
+          choisedMenuText.innerHTML =
+            "あと" + (7 - Number(totalCount)) + "食必要です";
+          choisedMenu.disabled = true;
+
+          // 7食選択後に要素削除の処理
+          choisedMenu.classList.remove("choisedMenuFinish");
+          choisedMenu.classList.add("choisedMenu");
+        }
+        if (7 - totalCount == 0) {
+          choisedMenuText.innerHTML = "7食選択完了です";
+          choisedMenu.disabled = false;
+          // 7食選択時のクラスの付与
+          choisedMenu.setAttribute("class", "choisedMenuFinish");
         }
       };
+      choisedMenu.appendChild(choisedMenuText);
+      choisedMenu.setAttribute("class", "choisedMenu");
+      const body = document.getElementById("body");
+      body.appendChild(choisedMenu);
     </script>
 
     <!-- js要素作成後にcssをかけるため記述 -->
     <link rel="stylesheet" href="css/style.css" />
   </body>
 </html>
+
+<!-- 判定テストの洗い出し -->
