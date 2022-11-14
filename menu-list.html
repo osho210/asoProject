@@ -16,7 +16,63 @@
 
   <body id="body">
     <!-- G1-3-1に対応している画面です -->
-    <div>
+
+    <div class="unallpwPage none">
+      <div>
+        <p>避けたい食材を選択してください</p>
+        <div id="food"></div>
+        <button class="canselButtun">閉じる</button>
+      </div>
+    </div>
+
+    <!-- 食材のためのjs -->
+    <script type="text/javascript">
+      let foodArray = [
+        "小麦",
+        "卵",
+        "乳",
+        "そば",
+        "えび",
+        "かに",
+        "落花生",
+        "魚",
+        "豚肉",
+        "鶏肉",
+        "牛肉",
+        "さけ",
+        "さば",
+        "大豆",
+        "いか",
+        "やまいも",
+        "オレンジ",
+        "ごま",
+        "カシューナッツ",
+        "あわび",
+        "いくら",
+        "キウイフルーツ",
+        "バナナ",
+        "もも",
+        "りんご",
+        "くるみ",
+        "まつたけ",
+        "ゼラチン",
+        "アーモンド",
+      ];
+
+      for (let i = 0; i < foodArray.length; i++) {
+        const foodContent = document.createElement("div");
+        const foodContentText = document.createElement("buttun");
+        foodContentText.classList.add("foodContentText");
+        foodContentText.innerHTML = foodArray[i];
+        foodContent.appendChild(foodContentText);
+
+        const food = document.getElementById("food");
+        food.appendChild(foodContent);
+      }
+    </script>
+
+    <!-- 通常表示する -->
+    <div class="allowPage">
       <!-- メニュー絞り込み部分 -->
       <div>
         <div class="menuRecomend"><p>メニューからおまかせ選択</p></div>
@@ -34,8 +90,17 @@
       <div>
         <!-- 食材フィルター -->
         <div class="foodFillter">
-          <div><button>食材フィルター</button></div>
-          <div><button>並び変え</button></div>
+          <div><button class="foodButton">食材フィルター</button></div>
+          <div class="cp_ipselect cp_sl01">
+            <select required>
+              <option value="" hidden>並び替え</option>
+              <option value="1">糖質</option>
+              <option value="2">塩分</option>
+              <option value="3">カロリー</option>
+              <option value="4">タンパク質</option>
+              <option value="5">脂質</option>
+            </select>
+          </div>
         </div>
         <!-- コンテンツ部分 -->
         <div id="mainContent"></div>
@@ -164,6 +229,24 @@
       choisedMenu.setAttribute("class", "choisedMenu");
       const body = document.getElementById("body");
       body.appendChild(choisedMenu);
+
+      // buttunclickの処理
+      const buttunClick = document.getElementsByClassName("foodButton")[0];
+      buttunClick.addEventListener("click", () => {
+        const allowPage = document.getElementsByClassName("allowPage")[0];
+        const unallpwPage = document.getElementsByClassName("unallpwPage")[0];
+        allowPage.classList.add("none");
+        unallpwPage.classList.remove("none");
+      });
+
+      // buttunclickの処理
+      const canselButtun = document.getElementsByClassName("canselButtun")[0];
+      canselButtun.addEventListener("click", () => {
+        const allowPage = document.getElementsByClassName("allowPage")[0];
+        const unallpwPage = document.getElementsByClassName("unallpwPage")[0];
+        unallpwPage.classList.add("none");
+        allowPage.classList.remove("none");
+      });
     </script>
 
     <!-- js要素作成後にcssをかけるため記述 -->
