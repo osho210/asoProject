@@ -27,37 +27,12 @@
 
     <!-- 食材のためのjs -->
     <script type="text/javascript">
-      let foodArray = [
-        "小麦",
-        "卵",
-        "乳",
-        "そば",
-        "えび",
-        "かに",
-        "落花生",
-        "魚",
-        "豚肉",
-        "鶏肉",
-        "牛肉",
-        "さけ",
-        "さば",
-        "大豆",
-        "いか",
-        "やまいも",
-        "オレンジ",
-        "ごま",
-        "カシューナッツ",
-        "あわび",
-        "いくら",
-        "キウイフルーツ",
-        "バナナ",
-        "もも",
-        "りんご",
-        "くるみ",
-        "まつたけ",
-        "ゼラチン",
-        "アーモンド",
-      ];
+      <?php
+        require_once "DBManager.php";
+        $dbm=new DBManager();
+
+        $dbm->allergen_display();
+      ?>
 
       for (let i = 0; i < foodArray.length; i++) {
         const foodContent = document.createElement("div");
