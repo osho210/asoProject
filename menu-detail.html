@@ -20,22 +20,31 @@
     <div id="menuWrapper"></div>
     <script type="text/javascript">
       const menuWrapper = document.getElementById("menuWrapper");
+
       const menuTitle = document.createElement("p");
       menuTitle.innerHTML = "ハンバーグ";
+      menuTitle.classList.add("menuTitle");
       menuWrapper.appendChild(menuTitle);
 
       const menuImage = document.createElement("img");
       menuImage.src = "./img/pasta.jpg";
-      menuImage.classList.add("menuImage");
+      menuImage.classList.add("menuDetailImage");
       menuWrapper.appendChild(menuImage);
 
+      // メニュー一覧遷移ボタン
       const buttonArea = document.createElement("div");
+      buttonArea.classList.add("buttonArea");
       const closeButtun = document.createElement("button");
       closeButtun.innerHTML = "閉じる";
       closeButtun.setAttribute("class", "closeButtun");
+      closeButtun.classList.add = "closeButtun";
+
+      // メニュー追加ボタン
       const addMenuButtun = document.createElement("button");
       addMenuButtun.innerHTML = "+メニューに追加する";
       addMenuButtun.setAttribute("class", "addMenuButtun");
+      addMenuButtun.classList.add = "addMenuButtun";
+
       buttonArea.appendChild(closeButtun);
       buttonArea.appendChild(addMenuButtun);
       menuWrapper.appendChild(buttonArea);
@@ -45,8 +54,9 @@
         "この文章はテストです。この文章はテストです。この文章はテストです。この文章はテストです。この文章はテストです。この文章はテストです。";
       menuWrapper.appendChild(introductionText);
 
-      //   栄養値要素
+      //--------------栄養値要素--------------------
       const nutrientWrapper = document.createElement("div");
+      nutrientWrapper.classList.add("nutrientWrapper");
       //   栄養値タイトルの配列
       const nutrientArray = [
         "カロリー",
@@ -60,18 +70,70 @@
       //   栄養値の値の配列
       const nutrientValueArray = [10, 20, 30, 30, 30, 10];
 
-      for (let i = 0; 0 < nutrientArray.length; i++) {
+      for (let i = 0; i < nutrientValueArray.length; i++) {
+        // 栄養要素のdiv
         const nutrientDiv = document.createElement("div");
+        nutrientDiv.classList.add("nutrientDiv");
+        // 栄養名
         const nutrientName = document.createElement("p");
+        // 栄養値
         const nutrientValue = document.createElement("p");
         nutrientName.innerHTML = nutrientArray[i];
-        nutrientValue.innerHTML = nutrientValueArray[i];
+
+        // カロリーのみkcal表示
+        if (i == 0) {
+          nutrientValue.innerHTML = nutrientValueArray[i] + "kcal";
+        } else {
+          nutrientValue.innerHTML = nutrientValueArray[i] + "g";
+        }
         nutrientDiv.appendChild(nutrientName);
         nutrientDiv.appendChild(nutrientValue);
         nutrientWrapper.appendChild(nutrientDiv);
 
         menuWrapper.appendChild(nutrientWrapper);
       }
+      //--------------栄養値要素--------------------
+
+      // -------------メニュー詳細------------
+      const menuDetailArray = [
+        "さかな",
+        "はまち",
+        "まつたけ",
+        "わさび",
+        "しいたけ",
+      ];
+      const menuDetailWrapper = document.createElement("div");
+      const menuDetailDiv = document.createElement("div");
+      for (let i = 0; i < menuDetailArray.length; i++) {
+        const menuDetailText = document.createElement("p");
+        menuDetailText.innerHTML = menuDetailArray[i];
+        menuDetailDiv.appendChild(menuDetailText);
+      }
+      menuDetailWrapper.appendChild(menuDetailDiv);
+      menuWrapper.appendChild(menuDetailWrapper);
+
+      // -------------メニュー詳細------------
+
+      // -------------原材料------------
+      const menuMaterialArray = [
+        "チリハンバーグステーキ",
+        "そら豆のポテトサラダ",
+        "チリソース",
+        "なすのバジルソース",
+        "そら豆のポテトサラダ",
+      ];
+      const menuMaterialWrapper = document.createElement("div");
+      const menuMaterialDiv = document.createElement("div");
+      for (let i = 0; i < menuMaterialArray.length; i++) {
+        const menuMaterialText = document.createElement("p");
+        menuMaterialText.innerHTML = menuMaterialArray[i];
+        menuMaterialDiv.appendChild(menuMaterialText);
+      }
+      menuMaterialWrapper.appendChild(menuMaterialDiv);
+      menuWrapper.appendChild(menuMaterialWrapper);
+      // -------------原材料------------
+
+      // -------------閉じる------------
     </script>
   </body>
 </html>

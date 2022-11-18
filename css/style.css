@@ -201,66 +201,108 @@ body {
   color: white;
 }
 
-
 /* payment */
 .container {
-            display: block;
-            position: relative;
-            padding-left: 50px;
-            margin-bottom: 10px;
-            cursor: pointer;
-            font-size: 22px;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
-        
-        /* デフォルトのラジオボタンデザインを無効化 */
-        .container input {
-            position: absolute;
-            justify-content: center;
-            opacity: 0;
-            cursor: pointer;
-        }
-        
-        /* カスタムラジオボタンの作成 */
-        .checkmark {
-            position: absolute;
-            justify-content: center;
-            top: 7px;
-            left: 7px;
-            height: 25px;
-            width: 25px;
-            background-color: #eee;
-            border-radius: 50%;
-        }
-        
-        /* マウスオーバーのリアクション */
-        .container:hover input ~ .checkmark {
-            background-color: #ccc;
-        }
-        
-        /* チェックした時のカラーリング */
-        .container input:checked ~ .checkmark {
-            background-color: #4caf50;
-        }
-        
-        .checkmark:after {
-            content: "";
-            position: absolute;
-            display: none;
-        }
-        
-        .container input:checked ~ .checkmark:after {
-            display: block;
-        }
-        
-        .container .checkmark:after {
-            top: 9px;
-            left: 9px;
-            width: 8px;
-            height: 8px;
-            border-radius: 70%;
-            background: white;
-        }
+  display: block;
+  position: relative;
+  padding-left: 50px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* デフォルトのラジオボタンデザインを無効化 */
+.container input {
+  position: absolute;
+  justify-content: center;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* カスタムラジオボタンの作成 */
+.checkmark {
+  position: absolute;
+  justify-content: center;
+  top: 7px;
+  left: 7px;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* マウスオーバーのリアクション */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* チェックした時のカラーリング */
+.container input:checked ~ .checkmark {
+  background-color: #4caf50;
+}
+
+.checkmark:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.container .checkmark:after {
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 70%;
+  background: white;
+}
+
+/* menuDtail */
+.menuTitle {
+  font-size: 25px;
+  padding: 5px 20px;
+}
+.closeButtun {
+  border: none;
+  background: #d9d9d9;
+  color: white;
+  width: 40%;
+  padding: 5px;
+  border-radius: 5p;
+}
+
+.addMenuButtun {
+  border: none;
+  background: #588f0e;
+  color: white;
+  width: 40%;
+  padding: 5px;
+  border-radius: 5px;
+}
+.buttonArea {
+  display: flex;
+  justify-content: space-around;
+  margin: 50px 0;
+}
+
+.menuDetailImage {
+  width: 100%;
+}
+
+/* 栄養素 */
+.nutrientWrapper {
+  flex-wrap: wrap;
+  display: flex;
+  border: 1px solid #30a713;
+}
+.nutrientDiv {
+  width: 30%;
+  border: 1px solid;
+}

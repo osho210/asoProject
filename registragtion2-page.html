@@ -41,6 +41,7 @@
         <input
           type="date"
           name="num01"
+          id="num01"
           value="date"
           min="2022-12-16"
           max="2025-12-31"
@@ -72,3 +73,20 @@
     </div>
   </body>
 </html>
+
+<script>
+  var today = new Date();
+  today.getFullYear();
+  today.getMonth() + 1;
+  today.getDate() + 1;
+  var todayNum =
+    today.getFullYear() +
+    "-" +
+    (today.getMonth() + 1) +
+    "-" +
+    (today.getDate() + 1);
+
+  const inputCal = document.getElementById("num01");
+  inputCal.min = todayNum;
+  console.log(todayNum);
+</script>
