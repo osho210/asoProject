@@ -68,6 +68,20 @@
 
         const food = document.getElementById("food");
         food.appendChild(foodContent);
+        let btnCount = 0;
+        // 選択時の処理
+        const foodContentClick = foodContent.addEventListener("click", () => {
+          // 1回目
+          if (btnCount % 2 == 0) {
+            foodContentText.classList.add("foodContentClick");
+          }
+          // 2回目
+          else if (btnCount % 2 == 1) {
+            foodContentText.classList.remove("foodContentClick");
+          }
+          btnCount++;
+          console.log(btnCount);
+        });
       }
     </script>
 
@@ -131,6 +145,12 @@
         menuText.innerHTML = menuArray[i][0];
         const menuImage = document.createElement("img");
         menuImage.setAttribute("src", "./img/" + menuArray[i][1]);
+
+        // menuの繊維
+        const menuImageBtn = menuImage.addEventListener("click", () => {
+          location.href = "menu-detail.html";
+        });
+
         //   画像サイズのためのcss
         menuImage.style.width = "100%";
         const menuSugar = document.createElement("div");
