@@ -289,4 +289,15 @@ class DBManager
             echo "</div>";
         }
     }
+    function menuheader()
+    {
+        echo '<style>
+            .headerWrappr{
+                padding: 2% 0;
+                border: 1px solid #9b9b9b;
+                margin-bottom: 20px;
+            }
+        </style>';
+        echo '<p class="text-success"><strong>ご購入手続き</strong></p>';
+    }
 }
