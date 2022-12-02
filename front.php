@@ -28,16 +28,16 @@
     </header>
     <main>
       <div>
-        <a href="./allergy-list.html">allergy-list</a><br />
-        <a href="./forget-page.html">forget-page</a><br />
-        <a href="./login-page.html">login-page</a><br />
-        <a href="./menu-detail.html">menu-detail</a><br />
-        <a href="./menu-list.html">menu-list</a><br />
-        <a href="./orderContent-page.html">orderContent-page</a><br />
-        <a href="./orderinfo-page.html">orderinfo-page</a><br />
-        <a href="./payment-page.html">payment-page</a><br />
-        <a href="./registragtion1-page.html">registragtion1-page</a><br />
-        <a href="./registragtion2-page.html">registragtion2-page</a><br />
+        <a href="./allergy-list.php">allergy-list</a><br />
+        <a href="./forget-page.php">forget-page</a><br />
+        <a href="./login-page.php">login-page</a><br />
+        <a href="./menu-detail.php">menu-detail</a><br />
+        <a href="./menu-list.php">menu-list</a><br />
+        <a href="./orderContent-page.php">orderContent-page</a><br />
+        <a href="./orderinfo-page.php">orderinfo-page</a><br />
+        <a href="./payment-page.php">payment-page</a><br />
+        <a href="./registragtion1-page.php">registragtion1-page</a><br />
+        <a href="./registragtion2-page.php">registragtion2-page</a><br />
         <a href="./orderComplete-page.html">orderComplete-page</a><br />
         <div class="front-back">
           <button class="top-botton">今すぐ始める</button>

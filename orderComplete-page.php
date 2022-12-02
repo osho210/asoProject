@@ -19,12 +19,14 @@
         <p class="text-success">
             <strong>ご購入手続き</strong><br>
             <img src="./img/orderComplete.png" style="width: 40%;">
+        <div>
+            <div class="orderComplete">
+                <h2>ありがとうございます。<br>購入が確定されました。</h2>
+            </div>
+            <p>
+                <button type="button" class="btn btn-success" button onclick="location.href='front.php'">ホーム画面に戻る</button>
+            </p>
 
-<div>
-    <div class="orderComplete"><h2>ありがとうございます。<br>購入が確定されました。</h2></div>
-    <p>
-        <button type="button" class="btn btn-success"button onclick="location.href='front.html'">ホーム画面に戻る</button>
-    </p>
+        </div>
 
-</div>
 </html>

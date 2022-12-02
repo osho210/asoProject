@@ -50,8 +50,11 @@
       menuWrapper.appendChild(buttonArea);
 
       const introductionText = document.createElement("p");
+      const menuTextTaitle = document.createElement("h2");
+      menuTextTaitle.innerHTML = "メニューについて";
+      menuWrapper.appendChild(menuTextTaitle);
       introductionText.innerHTML =
-        "この文章はテストです。この文章はテストです。この文章はテストです。この文章はテストです。この文章はテストです。この文章はテストです。";
+        "noshメニューの中でも大人気のチリハンバーグステーキです。肉汁をギュッと閉じ込めたジューシーなハンバーグは、噛むほどに肉の旨味が広がり絶品です。辛さ控えめのチリソースが、さらに美味しさを引き立てています。O副菜は、彩り野菜、なすのバジルソース、そら豆のポテトサラダです。";
       menuWrapper.appendChild(introductionText);
 
       //--------------栄養値要素--------------------
@@ -96,19 +99,25 @@
 
       // -------------メニュー詳細------------
       const menuDetailArray = [
-        "さかな",
-        "はまち",
-        "まつたけ",
-        "わさび",
-        "しいたけ",
+        "チリハンバーグステーキ",
+        "そら豆のポテトサラダ",
+        "チリソース",
+        "なすのバジルソース",
+        "そら豆のポテトサラダ",
       ];
+
       const menuDetailWrapper = document.createElement("div");
       const menuDetailDiv = document.createElement("div");
+      const menuDetailText = document.createElement("p");
+      let menuText = "";
       for (let i = 0; i < menuDetailArray.length; i++) {
-        const menuDetailText = document.createElement("p");
-        menuDetailText.innerHTML = menuDetailArray[i];
-        menuDetailDiv.appendChild(menuDetailText);
+        menuText = menuText + " " + menuDetailArray[i];
       }
+      const menuDetailTaitle = document.createElement("h2");
+      menuDetailTaitle.innerHTML = "メニュー詳細";
+      menuWrapper.appendChild(menuDetailTaitle);
+      menuDetailText.innerHTML = menuText;
+      menuDetailDiv.appendChild(menuDetailText);
       menuDetailWrapper.appendChild(menuDetailDiv);
       menuWrapper.appendChild(menuDetailWrapper);
 
@@ -116,23 +125,41 @@
 
       // -------------原材料------------
       const menuMaterialArray = [
-        "チリハンバーグステーキ",
-        "そら豆のポテトサラダ",
-        "チリソース",
-        "なすのバジルソース",
-        "そら豆のポテトサラダ",
+        "さかな",
+        "はまち",
+        "まつたけ",
+        "わさび",
+        "しいたけ",
       ];
       const menuMaterialWrapper = document.createElement("div");
       const menuMaterialDiv = document.createElement("div");
+      const menuMaterialText = document.createElement("p");
+      let menuMaterial = "";
       for (let i = 0; i < menuMaterialArray.length; i++) {
-        const menuMaterialText = document.createElement("p");
-        menuMaterialText.innerHTML = menuMaterialArray[i];
-        menuMaterialDiv.appendChild(menuMaterialText);
+        menuMaterial = menuMaterial + " " + menuMaterialArray[i];
       }
+      menuMaterialText.innerHTML = menuMaterial;
+      menuMaterialDiv.appendChild(menuMaterialText);
+
+      const menuMaterialaitle = document.createElement("h2");
+      menuMaterialaitle.innerHTML = "メニュー原材料";
+      menuWrapper.appendChild(menuMaterialaitle);
       menuMaterialWrapper.appendChild(menuMaterialDiv);
       menuWrapper.appendChild(menuMaterialWrapper);
       // -------------原材料------------
 
+      // -------------閉じる------------
+      const closeWrapper = document.createElement("div");
+      closeWrapper.classList.add("closeWrapper");
+      const closeMenuButton = document.createElement("buttun");
+      closeMenuButton.innerHTML = "閉じる";
+      closeMenuButton.classList.add("closeMenuButton");
+      closeWrapper.appendChild(closeMenuButton);
+      menuWrapper.appendChild(closeWrapper);
+
+      closeWrapper.addEventListener("click", () => {
+        location.href = "menu-list.html";
+      });
       // -------------閉じる------------
     </script>
   </body>

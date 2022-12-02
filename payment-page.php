@@ -42,8 +42,8 @@
             </p>
     </div>
     <p>
-    <button type="button" class="btn btn-secondary"onclick="location.href='registragtion2-page.html'">戻る</button>
-    <button type="button" class="btn btn-success"onclick="location.href='orderContent-page.html'">次へ</button>
+    <button type="button" class="btn btn-secondary"onclick="location.href='registragtion2-page.php'">戻る</button>
+    <button type="button" class="btn btn-success"onclick="location.href='orderContent-page.php'">次へ</button>
     </p>
 
 </div>

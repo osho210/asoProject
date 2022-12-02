@@ -25,10 +25,10 @@
 
             <p>パスワード(半角英数6文字以上)</p>
             <input type="text" name="passward" placeholder="Password"></p>
-            <p>すでにアカウントをお持ちの方はこちらから<a href= "login-page.html">ログイン</a>してくださいしてください</p>
-	        <p><button type="button" class="btn btn-secondary" onclick= "location.href='menu-list.html'">戻る</button>
+            <p>すでにアカウントをお持ちの方はこちらから<a href= "login-page.php">ログイン</a>してくださいしてください</p>
+	        <p><button type="button" class="btn btn-secondary" onclick= "location.href='menu-list.php'">戻る</button>
 
-            <button type="button" class="btn btn-success" onclick= "location.href='registragtion2-page.html'">次へ</button></p>
+            <button type="button" class="btn btn-success" onclick= "location.href='registragtion2-page.php'">次へ</button></p>
 </body>
 
 </html>

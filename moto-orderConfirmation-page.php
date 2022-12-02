@@ -13,6 +13,27 @@
 
 <body>
     <!-- G1-7に対応している画面です -->
+    <?php
+    $pushArrayVal = [];
+    $pushArrayKey = [];
+    // 入力された変数分だけ取得する
+    for ($i = 1; $i <= 7; $i++) {
+        // 存在しない場合処理を終了
+        if (!isset($_POST['value' . $i])) {
+            break;
+        } else {
+            array_push($pushArrayVal, $_POST['value' . $i]);
+            array_push($pushArrayKey, $_POST['key' . $i]);
+        }
+    }
+
+    print_r($pushArrayKey);
+    echo '<br>';
+    print_r($pushArrayVal);
+    echo '<p>' . 'test' . '</p>';
+
+
+    ?>
 </body>
 
 </html>

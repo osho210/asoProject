@@ -55,17 +55,17 @@
         }
     
         // pass
-        if(inputPass.value=""){
+        if(inputPass.value==""){
             passErrMesage.innerHTML="パスワードが未入力です。"
             errCount++;
         }
-        else if(inputPass.value.match(/^([a-zA-Z0-9]{5,})$/)){
+        else if(!inputPass.value.match(/^([a-zA-Z0-9]{5,})$/)){
             passErrMesage.innerHTML="パスワードの形式が不正です。"
             errCount++;
         }
 
         if(errCount==0){
-            location.href="menu-list.html";
+            location.href="menu-list.php";
         }
         else if (errCount>0){
             alert("入力に誤りがあります。")

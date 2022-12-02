@@ -303,6 +303,31 @@ body {
   border: 1px solid #30a713;
 }
 .nutrientDiv {
-  width: 30%;
-  border: 1px solid;
+  width: calc(100% / 3);
+  border: 1px solid #30a713;
+  text-align: center;
+  padding: 10px;
+}
+.nutrientDiv p {
+  margin-bottom: 0;
+}
+
+.closeMenuButton {
+  background: green;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.closeWrapper {
+  text-align: center;
+  margin-top: 60px;
+}
+
+
+
+
+
+.menuImage{
+  width: 100%;
 }
